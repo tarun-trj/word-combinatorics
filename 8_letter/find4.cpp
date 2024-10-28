@@ -1,10 +1,10 @@
-#include "matrix_data.h"
-#include "verify.h"
-#include "utility.h"
+#include "../header/matrix_data.h"
+#include "../header/verify.h"
+#include "../header/utility.h"
 
 using namespace std;
 
-const int NUM = encode.size();
+const int NUM = encode4.size();
 
 int main() {
     string layerEven = "abcd";
@@ -17,16 +17,16 @@ int main() {
 
     // Generate and check 4x4 matrices
     for (int l0 = 0; l0 < NUM; l0++) {
-        for (int i = 0; i < 4; i++) matrix4[0][i] = layerEven[encode[l0][i] - 1];  // Row 0
+        for (int i = 0; i < 4; i++) matrix4[0][i] = layerEven[encode4[l0][i] - 1];  // Row 0
 
         for (int l1 = 0; l1 < NUM; l1++) {
-            for (int i = 0; i < 4; i++) matrix4[1][i] = layerOdd[encode[l1][i] - 1];  // Row 1
+            for (int i = 0; i < 4; i++) matrix4[1][i] = layerOdd[encode4[l1][i] - 1];  // Row 1
 
             for (int l2 = 0; l2 < NUM; l2++) {
-                for (int i = 0; i < 4; i++) matrix4[2][i] = layerEven[encode[l2][i] - 1];  // Row 2
+                for (int i = 0; i < 4; i++) matrix4[2][i] = layerEven[encode4[l2][i] - 1];  // Row 2
 
                 for (int l3 = 0; l3 < NUM; l3++) {
-                    for (int i = 0; i < 4; i++) matrix4[3][i] = layerOdd[encode[l3][i] - 1];  // Row 3
+                    for (int i = 0; i < 4; i++) matrix4[3][i] = layerOdd[encode4[l3][i] - 1];  // Row 3
                     
 
                     // Check if the matrix is square-free
